@@ -14,6 +14,18 @@ console.log("------------------------");
 
 //Begin Time for Dictionary
 var starttimeforDictionary = new Date().getTime();
+const filenamearg = process.argv[2];
+const fs = require('fs'),
+    filename = filenamearg.toString(),
+    encoding = 'utf-8';
+fs.readFile(filename, encoding, function (err, data) {
+    if (err) throw err;
+});
+
+//Reading time for dictionary
+var elapsed = new Date().getTime() - starttimeforDictionary;
+console.log("Dictionary loaded in " + elapsed + " ms");
+
 
 
 /**Function defination for find anagrams of specific word from dictionary
@@ -32,18 +44,10 @@ var anagramsFinder = function () {
     //Ask for prompt question
     rl.question("AnagramFinder>", function (answer) {
         //Check for exit or not
-        if (answer == 'exit') {
-            //Reading time for dictionary
-            var elapsed = new Date().getTime() - starttimeforDictionary;
-            console.log("Dictionary loaded in " + elapsed + " ms");
+        if (answer == 'exit')
             return rl.close();
-        }
         else {
             //Find anagrams of passing parameter @param answer
-            var filenamearg = process.argv[2];
-            var fs = require('fs'),
-                filename = filenamearg.toString(),
-                encoding = 'utf-8';
             fs.readFile(filename, encoding, function (err, data) {
                 if (err) throw err;
                 var lines = data.split('\n');
@@ -67,6 +71,7 @@ var anagramsFinder = function () {
                 }
                 //End Time for SingleWord
                 var timeforsingleword = new Date().getTime() - starttimeforSingleword;
+
                 // Print Result
                 if (anagrams.length === 1)
                     console.log("No anagrams found for " + anagrams.pop() + " in " + timeforsingleword + "ms");
@@ -80,7 +85,6 @@ var anagramsFinder = function () {
     });
 
 }
-
 
 // Input String - trim whitespace, and convert to lower case and sorted string
 function convertString(input) {

@@ -29,15 +29,13 @@ var anagramsFinder = function () {
     //Ask for prompt question
     rl.question("AnargamFinder>", function (answer) {
         //Check for exit or not
-        if (answer === 'exit')
-        {
+        if (answer === 'exit') {
             var elapsed = new Date().getTime() - starttimeforDictionary;
             console.log("Dictionary loaded in " + elapsed + " ms");
             return rl.close();
         }
         else {
             //Find anagrams of passing parameter @param answer
-            var filenamearg = process.argv[2];
             const fs = require('fs'),
                 filename = filenamearg.toString(),
                 encoding = 'utf-8';
@@ -63,18 +61,20 @@ var anagramsFinder = function () {
                     var key = word.split('').sort().join('');
                     if (key === input)
                         if (!map.get(word))
-                            map.set(word,answer);
+                            map.set(word, answer);
                 }
+
                 //End Time for Single word
                 var timeforsingleword = new Date().getTime() - starttimeforsingleword;
                 //Print Result
-                if (map.size > 1)
-                {
+                var anagrams = [];
+                if (map.size > 1) {
                     map.forEach(function (key, value) {
-                       // console.log(value);
+                        anagrams.push(value);
                     });
+                    console.log(anagrams.toString());
                     console.log(map.size + " Anagrams found for " + answer + " in " + timeforsingleword + "ms");
-                }      
+                }
                 else
                     console.log("No Anagrams found for" + answer + " in " + timeforsingleword + "ms");
                 anagramsFinder();
@@ -83,9 +83,16 @@ var anagramsFinder = function () {
     })
 }
 
-//Program Start
-console.log("Welcome to the Anagram Finder");
-console.log("------------------------");
+const filenamearg = process.argv[2];
 
-//Function Calling
-anagramsFinder();
+if (filenamearg === "dictionary.txt") {
+    //Program Start
+    console.log("Welcome to the Anagram Finder");
+    console.log("------------------------");
+    anagramsFinder();
+}
+else
+process.exit(-1);
+
+
+
