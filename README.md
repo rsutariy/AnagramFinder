@@ -1,6 +1,5 @@
 Anagram Finder Programming Task
- - An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema , formed from iceman.
- 
+- An anagram is a word, phrase, or name formed by rearranging the letters of another, such as cinema , formed from iceman
  Flow of Task:
   - In each case, the program should accept a single parameter which will be the name of the dictionary file. 
   - The dictionary file consists oa  list of words. Each word is on separate line. 
