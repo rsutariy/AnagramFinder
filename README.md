@@ -10,7 +10,7 @@ Anagram Finder Programming Task
  
 Created two versions of task
  1. anagrams.js
-    How program works?
+  - How program works?
     - First read file and and convert data in lower case array.
     - Then convert input string to lower case and sorted manner.
     - Then take one word from array(storing it to another variable) and sort it into key.
@@ -19,7 +19,7 @@ Created two versions of task
     - Display anagrams array.
     
  2. improved_anagrams.js
-    How program works?
+  - How program works?
     - First read file and and convert data in lower case array.
     - Then convert input string to lower case and sorted manner.
     - Then take one word from array(storing it to another variable) and sort it into key.
