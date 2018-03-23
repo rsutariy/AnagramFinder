@@ -24,6 +24,6 @@ Created two versions of task
     - Then convert input string to lower case and sorted manner.
     - Then take one word from array(storing it to another variable) and sort it into key.
     - Check that sorted key with input.
-    - If it is match then store that key and value in map.
-    - Whenever need that key then fetch value from map.
+    - If key is match then check key is available to map or not if available then fetch value from map otherwise store that key-value pair 
+      in map.
     - Display value from map.
