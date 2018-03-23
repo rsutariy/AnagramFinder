@@ -27,3 +27,8 @@ Created two versions of task
     - If key is match then check key is available to map or not if available then fetch value from map otherwise store that key-value pair 
       in map.
     - Display value from map.
+    
+To Run this program :
+1. write command in command line - npm install.
+2. To run version 1, write command - node anagrams.js dictionary.txt
+3. To run version 2, write command - node improved_anagrams.js dictionary.txt
