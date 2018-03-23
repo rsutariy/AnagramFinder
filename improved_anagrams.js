@@ -92,7 +92,7 @@ if (filenamearg === "dictionary.txt") {
     anagramsFinder();
 }
 else
-process.exit(-1);
+    process.exit(-1);
 
 
 
