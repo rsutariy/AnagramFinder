@@ -11,6 +11,9 @@ if (process.argv.length !== 3) {
     process.exit(-1);
 }
 
+//Begin Time for Single word
+const starttimeforDictionary = new Date().getTime();
+
 /**Function defination for find anagrams of specific word from dictionary
   *Read data from dictionary.txt file
   *Convert input string to sorted lower case string
@@ -27,7 +30,11 @@ var anagramsFinder = function () {
     rl.question("AnargamFinder>", function (answer) {
         //Check for exit or not
         if (answer === 'exit')
+        {
+            var elapsed = new Date().getTime() - starttimeforDictionary;
+            console.log("Dictionary loaded in " + elapsed + " ms");
             return rl.close();
+        }
         else {
             //Find anagrams of passing parameter @param answer
             var filenamearg = process.argv[2];

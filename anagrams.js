@@ -11,6 +11,7 @@ if (process.argv.length !== 3) {
 //Program Start
 console.log("Welcome to the Anagram Finder");
 console.log("------------------------");
+
 //Begin Time for Dictionary
 var starttimeforDictionary = new Date().getTime();
 
@@ -33,6 +34,8 @@ var anagramsFinder = function () {
         //Check for exit or not
         if (answer == 'exit') {
             //Reading time for dictionary
+            var elapsed = new Date().getTime() - starttimeforDictionary;
+            console.log("Dictionary loaded in " + elapsed + " ms");
             return rl.close();
         }
         else {
@@ -79,22 +82,6 @@ var anagramsFinder = function () {
 }
 
 
-//Readdictionary - to calculate load time 
-async function readDictionary() {
-
-    var filenamearg = process.argv[2];
-    var fs = require('fs'),
-        filename = filenamearg.toString(),
-        encoding = 'utf-8';
-    fs.readFile(filename, function (err, data) {
-        if (err) throw err;
-    });
-
-    var elapsed = new Date().getTime() - starttimeforDictionary;
-    console.log("Dictionary loaded in " + elapsed + " ms");
-
-}
-
 // Input String - trim whitespace, and convert to lower case and sorted string
 function convertString(input) {
     if (!input) {
@@ -105,9 +92,6 @@ function convertString(input) {
     var sortedString = inputString.trim().toLowerCase();
     return sortedString.split('').sort().join('');
 }
-
-//Read Dictionary
-readDictionary();
 
 //Function Calling
 anagramsFinder();
