@@ -8,7 +8,7 @@ Anagram Finder Programming Task
   - Include in the output timings for loading the dictionary and timings for each anagram set request.
   - The program should continue to prompt for anagrams until “exit” is typed at the prompt.
  
- - Created two versions of task
+Created two versions of task
  1. anagrams.js
     How program works?
     - First read file and and convert data in lower case array.
