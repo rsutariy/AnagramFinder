@@ -58,8 +58,7 @@ var anagramsFinder = function () {
                         if (!map.get(word))
                             map.set(word,answer);
                 }
-                
-                //End Time
+                //End Time for Single word
                 var timeforsingleword = new Date().getTime() - starttimeforsingleword;
                 //Print Result
                 if (map.size > 1)
